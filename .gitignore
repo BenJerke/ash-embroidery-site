@@ -30,3 +30,9 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# test images
+public/images/product_images/flamingo.jpg
+public/images/product_images/gibbon.jpg
+public/images/product_images/ostrich.jpg
+public/images/product_images/walrus.jpg

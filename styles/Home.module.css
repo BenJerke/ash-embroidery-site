@@ -108,6 +108,21 @@
   margin-left: 0.5rem;
 }
 
+.button {
+  background-color: #fafafa;
+  padding: .5rem;
+  margin: .5rem;
+  align-items: center;
+}
+#left {
+  float: left, center;
+  
+}
+#right {
+  float: right, center;
+  
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
