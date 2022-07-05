@@ -1,9 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import bootstrap from 'bootstrap/dist/css/bootstrap.css'
 import { getCarouselPicData } from '../utils/utils'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 
 
@@ -26,24 +25,43 @@ export async function getStaticProps() {
 
 export default function Home({ picSrc }) {
 
+const sleep = (delay) => new Promise ((resolve) => setTimeout(resolve, delay));
 
 const [image, setImage] = useState(`/images/product_images/${picSrc[0]}`);
+const [imgClass, setImgClass] = useState(null);
+const [btnUnclickable, setBtnUnclickable] = useState(null);
 
+function triggerLeftSlide() {
+  setImgClass(styles.imageslidefromright);
+}
 
-function changePicRight() {
+function triggerRightSlide() {
+  setImgClass(styles.imageslidefromleft);
+}
+
+function resetAnimationClass() {
+  setImgClass(styles.image);
+}
+
+async function changePicRight() {  
   let oldPath = image.replace("/images/product_images/", "")
-  let x = picSrc.indexOf(oldPath);
-  
+  let x = picSrc.indexOf(oldPath);  
   let y = (picSrc.length - 1) ;
   if (x < y) {
     x += 1;
   } else if (x == y){
     x = 0;
   }
-  return setImage(`/images/product_images/${picSrc[x]}`);
+
+  setImage(`/images/product_images/${picSrc[x]}`);
+  triggerLeftSlide();
+  setBtnUnclickable(true);
+  await sleep(1100);
+  resetAnimationClass();
+  setBtnUnclickable(false);
 }
 
-function changePicLeft() {
+async function changePicLeft() {
   let oldPath = image.replace("/images/product_images/", "")
   let x = picSrc.indexOf(oldPath);
   let y = (picSrc.length - 1);
@@ -52,7 +70,13 @@ function changePicLeft() {
   } else {
     x = y;
   }
-  return setImage(`/images/product_images/${picSrc[x]}`);
+
+  setImage(`/images/product_images/${picSrc[x]}`);
+  triggerRightSlide();
+  setBtnUnclickable(true);
+  await sleep(1100);
+  resetAnimationClass();
+  setBtnUnclickable(false);
 }
 
 
@@ -61,7 +85,6 @@ function changePicLeft() {
       <Head>
         <title>DEMO SITE</title>
         <meta name="description" content="not done don't look aaaaa" />
-        <meta name="viewport" content="" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.container}>
@@ -75,15 +98,17 @@ function changePicLeft() {
         <div>
               <div>
                 <div>
-                  <button id="left" className={styles.button} onClick={changePicLeft}>👈</button>  
+                  <button id="left" className={styles.button} disabled={btnUnclickable} onClick={changePicLeft}> 👈 </button>  
 
-                  <Image        
+                  <Image
+                  id="image"        
                   src={image} 
+                  className={imgClass}                
                   alt='product' 
                   width='400'   
-                  height='300'
+                  height='400'
                   />
-                  <button id="right" className={styles.button}  onClick={changePicRight}>👉</button> 
+                  <button id="right" className={styles.button} onClick={changePicRight} disabled={btnUnclickable}> 👉 </button> 
                 </div>
               </div>
         </div>
