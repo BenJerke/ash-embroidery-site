@@ -73,6 +73,12 @@
   max-width: 800px;
 }
 
+.nav {
+  float: right;
+  align-items: right;
+  justify-content: right;
+}
+
 .card {
   margin: 1rem;
   padding: 1.5rem;
@@ -138,6 +144,7 @@
 
 .image {
   animation-name: none;
+  margin: 20px;
 }
 
 .imageslidefromright {
