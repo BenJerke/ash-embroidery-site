@@ -1,40 +1,10 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import React, { useState, useEffect, useCallback } from 'react'
 import { Button, Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
 
 
-export default function Contact() {
-//let gridimgs = picSrc.map(((path) => '/images/product_images/' + path))
-//console.log(gridimgs)
-
-const sleep = (delay) => new Promise ((resolve) => setTimeout(resolve, delay));
-
-const useMediaQuery = () => {
-  const [targetReached, setTargetReached] = useState(false);
-
-  const updateTarget = useCallback((e) => {
-    if (e.matches) {
-      setTargetReached(true);
-    } else {
-      setTargetReached(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    const media = window.matchMedia(`(max-width: 768px)`);
-    media.addListener(updateTarget);
-    
-    if (media.matches) {
-      setTargetReached(true);
-    }
-
-    return () => media.removeListener(updateTarget);
-  }, []);
-
-  return targetReached;
-}
+export default function About() {
   return (
     <div>
       <Head>
@@ -57,13 +27,8 @@ const useMediaQuery = () => {
       <div className={styles.container}>
       <main className={styles.main}> 
         <p>
-            This is where our contact form goes. 
-        </p>
-        <input>
-        </input>
-        <button>
-            Submit
-        </button>
+            This is where the bio goes.
+        </p>       
       </main>
       </div>   
       </div>
