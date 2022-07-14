@@ -124,10 +124,9 @@
 }
 
 .button {
-  opacity: 1;
-  padding: 0;
+  padding: 6;
   border: none;
-  background: none;
+  background-color: black;
   margin: .5rem;
   align-items: center;
 
@@ -135,11 +134,13 @@
 
 .button:disabled {
   opacity: 1;
-  padding: 0;
   border: none;
-  background: none;
-  margin: .5rem;
+  background-color:#7d8083;
   align-items: center;
+}
+
+.button:hover{
+  background-color:#7d8083;
 }
 
 #left {

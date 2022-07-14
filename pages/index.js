@@ -29,9 +29,9 @@ export default function Home({ picSrc }) {
 //console.log(gridimgs)
 
 const sleep = (delay) => new Promise ((resolve) => setTimeout(resolve, delay));
-const [image, setImage] = useState(`/images/product_images/${picSrc[0]}`);
-const [imgLeft, setImgLeft] = useState(`/images/product_images/${picSrc[(picSrc.length - 1)]}`)
-const [imgRight, setImgRight] = useState(`/images/product_images/${picSrc[1]}`)
+const [imgLeft, setImgLeft] = useState(`/images/product_images/${picSrc[0]}`)
+const [image, setImage] = useState(`/images/product_images/${picSrc[1]}`);
+const [imgRight, setImgRight] = useState(`/images/product_images/${picSrc[2]}`)
 const [imgClass, setImgClass] = useState(styles.image);
 const [imgLeftClass, setImgLeftClass] = useState(styles.image);
 const [imgRightClass, setImgRightClass] = useState(styles.image);
@@ -81,22 +81,30 @@ function resetAnimationClass() {
 }
 
 async function changePicRight() {
-  let oldPath = image.replace("/images/product_images/", "")
-  let x = picSrc.indexOf(oldPath);  
+  console.log("right")
+  let oldPathLeft = imgLeft.replace("/images/product_images/", "")
+  let oldPathCenter = image.replace("/images/product_images/", "")
+  let oldPathRight = imgRight.replace("/images/product_images/", "")
+  let a = picSrc.indexOf(oldPathLeft);
+  let x = picSrc.indexOf(oldPathCenter);  
+  let b = picSrc.indexOf(oldPathRight);
   let y = (picSrc.length - 1);
-  let a = 0;
-  let b = 0;
-  if (x < y) {
-    x += 1;
-    a = x - 1;
-    b = x + 1;
-  } else if (x == y){
-    x = 0;
-    a = y;
-    b = x + 1;
-  }
+  //assuming at least three images at all times, or else it's bad.
+  //left becomes next image in line
+  //center becomes what was in the left slot
+  //right becomes what was in the center slot
+  if (a - 1 >= 0) {
+    console.log("greater than or zero, a=" + a + "x= " + x+ ", b=" + b )
+    b = x;
+    x = a;
+    a = a - 1;
 
-  
+  } else if (a - 1 == -1) {
+    console.log("negative one, a=" + a + "x= " + x+ ", b=" + b )
+    b = x; 
+    x = a;
+    a = y; 
+  } 
 
   setImage(`/images/product_images/${picSrc[x]}`);
   setImgLeft(`/images/product_images/${picSrc[a]}`);
@@ -109,22 +117,27 @@ async function changePicRight() {
 }
 
 async function changePicLeft() {
-  let oldPath = image.replace("/images/product_images/", "")
-  let x = picSrc.indexOf(oldPath);
+  console.log("left")
+  let oldPathLeft = imgLeft.replace(("/images/product_images/", ""))
+  let oldPathCenter = image.replace("/images/product_images/", "")
+  let oldPathRight = imgRight.replace("/images/product_images/", "")
+  let a = picSrc.indexOf(oldPathLeft);
+  let x = picSrc.indexOf(oldPathCenter);  
+  let b = picSrc.indexOf(oldPathRight);
   let y = (picSrc.length - 1);
-  let a = 0;
-  let b = 0;
-  if (x > 0 && x != y) {
-    b = x + 1
-    a = x; 
-    x -= 1;
-    
-    
-    
-  } else {
-    x = y;
-  }
 
+  //left becomes what was in the center slot
+  //center becomes what was in the right slot
+  //right becomes next in line 
+  if (b + 1 <= y) {
+    a = x; 
+    x = b; 
+    b = b + 1;
+  } else if (b + 1 == y + 1) {
+    a = x;
+    x = b;
+    b = 0;
+  }
   setImage(`/images/product_images/${picSrc[x]}`);
   setImgLeft(`/images/product_images/${picSrc[a]}`);
   setImgRight(`/images/product_images/${picSrc[b]}`);
@@ -228,8 +241,8 @@ async function changePicLeft() {
             </Row>
           </Container>
             <div className={styles.container}>
-              <Button id="left" className={styles.button} disabled={btnUnclickable} onClick={changePicLeft}> 👈 </Button>  
-              <Button id="right" className={styles.button} onClick={changePicRight} disabled={btnUnclickable}> 👉 </Button> 
+              <Button id="left" className={styles.button} disabled={btnUnclickable} onClick={changePicLeft}> &lt; </Button>  
+              <Button id="right" className={styles.button} onClick={changePicRight} disabled={btnUnclickable}> &gt; </Button> 
         </div>
       </main>
       </div>
