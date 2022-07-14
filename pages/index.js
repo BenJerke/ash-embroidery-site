@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { getCarouselPicData } from '../utils/utils'
 import React, { useState, useEffect, useCallback } from 'react'
-import { Button, Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
+import { Button, Navbar, Container, Nav, NavDropdown, Row, Col } from 'react-bootstrap'
 
 
 export async function getStaticProps() {
@@ -187,14 +187,15 @@ async function changePicLeft() {
         <Nav className={styles.navlinks}>
           <Nav.Link href="/about">About</Nav.Link>
           <Nav.Link href="/contact">Contact</Nav.Link>
-          <Nav.Link href="/gallery">Gallery</Nav.Link>
         </Nav>
       </Navbar.Collapse>
       </Container>
     </Navbar>
       <div className={styles.container}>
       <main className={styles.main}>
-        <div className={styles.imageholder}>
+      <Container fluid>
+        <Row>
+                <Col>
                   <Image
                     id="imgLeft"
                     src={imgLeft}
@@ -202,8 +203,9 @@ async function changePicLeft() {
                     alt='left product'
                     width='350'
                     height='350'
-                  />
-                  <div></div>                
+                  />    
+                  </Col> 
+                  <Col> 
                   <Image
                   id="image"        
                   src={image} 
@@ -211,8 +213,9 @@ async function changePicLeft() {
                   alt='central product' 
                   width='350'   
                   height='350'
-                  />
-                  <div></div>   
+                  /> 
+                  </Col>
+                  <Col>   
                   <Image
                     id="imgRight"                  
                     src={imgRight}
@@ -221,7 +224,9 @@ async function changePicLeft() {
                     width='350'
                     height='350'
                   />
-              </div>
+                  </Col>  
+            </Row>
+          </Container>
             <div className={styles.container}>
               <Button id="left" className={styles.button} disabled={btnUnclickable} onClick={changePicLeft}> 👈 </Button>  
               <Button id="right" className={styles.button} onClick={changePicRight} disabled={btnUnclickable}> 👉 </Button> 
