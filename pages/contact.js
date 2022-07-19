@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import React, { useState, useEffect, useCallback } from 'react'
-import { Button, Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
+import { Button, Navbar, Container, Nav, NavDropdown, Form } from 'react-bootstrap'
 
 
 export default function Contact() {
@@ -56,14 +56,21 @@ const useMediaQuery = () => {
     </Navbar>
       <div className={styles.container}>
       <main className={styles.main}> 
-        <p>
-            This is where our contact form goes. 
-        </p>
-        <input>
-        </input>
-        <button>
-            Submit
-        </button>
+      <Form>
+      <Form.Group className="mb-3" controlId="emailaddress">
+        <Form.Label>Email</Form.Label>
+        <Form.Control type="email" placeholder="Enter your email" />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="emailbody">
+        <Form.Label>What can I do for you?</Form.Label>
+        <Form.Control as="textarea" rows={4} />
+      </Form.Group>
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+    </Form>
+
       </main>
       </div>   
       </div>

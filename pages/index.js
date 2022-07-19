@@ -94,7 +94,7 @@ async function changePicRight() {
   //center becomes what was in the left slot
   //right becomes what was in the center slot
   if (a - 1 >= 0) {
-    console.log("greater than or zero, a=" + a + "x= " + x+ ", b=" + b )
+    //console.log("greater than or zero, a=" + a + "x= " + x+ ", b=" + b )
     b = x;
     x = a;
     a = a - 1;
