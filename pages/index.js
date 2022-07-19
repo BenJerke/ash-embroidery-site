@@ -245,7 +245,7 @@ async function changePicLeft() {
         </div>
       </main>
       <div>
-        <Container fluid>
+        <Container>
       <h3>
           Bio
         </h3>
