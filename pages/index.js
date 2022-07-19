@@ -11,11 +11,12 @@ export async function getServerSideProps() {
   let picSrc = [];
   carouselPicData.forEach(obj => {
     //console.log(obj.source)
-    picSrc.push(obj.source)
+    picSrc.push(obj.source);
+    
   });
 
 
-
+  console.log(picSrc);
   return {
     props: {
       picSrc,
@@ -25,7 +26,6 @@ export async function getServerSideProps() {
 
 
 export default function Home({ picSrc }) {
-console.log(picSrc)
 //let gridimgs = picSrc.map(((path) => '/images/product_images/' + path))
 //console.log(gridimgs)
 
