@@ -15,8 +15,6 @@ export async function getServerSideProps() {
     
   });
 
-
-  console.log(picSrc);
   return {
     props: {
       picSrc,
