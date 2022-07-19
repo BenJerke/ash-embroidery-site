@@ -244,6 +244,8 @@ async function changePicLeft() {
               <Button id="right" className={styles.button} onClick={changePicRight} disabled={btnUnclickable}> &gt; </Button> 
         </div>
       </main>
+      <div>
+        <Container fluid>
       <h3>
           Bio
         </h3>
@@ -261,6 +263,9 @@ The timeline can vary a fair bit. I’m in graduate school and sometimes my scho
 Currently I have a backlog of commissions but can add to the waitlist. I’m estimating being able to get to a new commission about one or two months from being contacted.
 If you have a design in mind you are welcome to send it to me. If you want me to come up with a design, we can work together to figure out something that works for you! 
         </p>
+        </Container>
+        </div>
+        
       </div>
     </div>       
     )
