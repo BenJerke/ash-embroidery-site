@@ -25,6 +25,7 @@ export async function getServerSideProps() {
 
 
 export default function Home({ picSrc }) {
+console.log(picSrc)
 //let gridimgs = picSrc.map(((path) => '/images/product_images/' + path))
 //console.log(gridimgs)
 
@@ -81,7 +82,7 @@ function resetAnimationClass() {
 }
 
 async function changePicRight() {
-  console.log("right")
+  //console.log("right")
   let oldPathLeft = imgLeft.replace("/images/product_images/", "")
   let oldPathCenter = image.replace("/images/product_images/", "")
   let oldPathRight = imgRight.replace("/images/product_images/", "")
@@ -100,7 +101,7 @@ async function changePicRight() {
     a = a - 1;
 
   } else if (a - 1 == -1) {
-    console.log("negative one, a=" + a + "x= " + x+ ", b=" + b )
+    //console.log("negative one, a=" + a + "x= " + x+ ", b=" + b )
     b = x; 
     x = a;
     a = y; 
@@ -117,7 +118,7 @@ async function changePicRight() {
 }
 
 async function changePicLeft() {
-  console.log("left")
+  //console.log("left")
   let oldPathLeft = imgLeft.replace(("/images/product_images/", ""))
   let oldPathCenter = image.replace("/images/product_images/", "")
   let oldPathRight = imgRight.replace("/images/product_images/", "")
