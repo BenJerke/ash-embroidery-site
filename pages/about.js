@@ -32,8 +32,9 @@ export default function About() {
         <br></br>
         <p>
         Services
+        </p>
 
-
+<p>
 
 I do both Blundstone/boots and hoop (wall art) commissions. I can also embroider other things (clothes, etc) so if you have something in mind, just reach out and we can discuss. Prices depend very much on design and the amount of time it will take me to complete it. 
 
