@@ -1,22 +1,32 @@
+
+ /* 
+ --rivergod: #6b6c67;
+  --autumnshill: #b77c62;
+  --chintz: #c1bcb2;
+  --jungle: #586b4f;
+  --moon: #eae5db;
+*/
+
 .container {
-  padding: 0 2rem;
+  padding: 2rem 0 0;
   justify-content: center;
+  background-color: #6b6c67;
 }
 
 .main {
-  min-height: 100vh;
-  padding: 4rem 0;
+  padding: 4rem 0 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #6b6c67;
 }
 
 .footer {
   display: flex;
   flex: 1;
   padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid #eae5db;
   justify-content: center;
   align-items: center;
 }
@@ -50,21 +60,6 @@
   text-align: center;
 }
 
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
 .list {
   list-style: none;
   padding: 0;
@@ -80,6 +75,7 @@
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
+  background-color: inherit;
 }
 
 .nav {
@@ -107,16 +103,6 @@
   border-color: #0070f3;
 }
 
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
 
 .logo {
   height: 1em;
@@ -126,10 +112,9 @@
 .button {
   padding: 6;
   border: none;
-  background-color: black;
+  background-color: #c1bcb2;
   margin: .5rem;
   align-items: center;
-
 }
 
 .button:disabled {
@@ -175,9 +160,15 @@
   justify-content: center;
 }
 
+.navbar {
+  background-color: #586b4f;
+}
+
 .navlinks {
   justify-content: end;
 }
+
+
 
 .imageholder {
   flex-direction: column;

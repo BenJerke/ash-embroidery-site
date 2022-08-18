@@ -154,8 +154,8 @@ async function changePicLeft() {
       <meta name="description" content="not done don't look aaaaa" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <Navbar bg="light" expand="lg" fixed="top">
-    <Container>
+    <Navbar expand="lg" fixed="top">
+    <Container className={styles.navbar}>
     <Navbar.Brand href="/">Ash Embroidery</Navbar.Brand>
     <Navbar.Toggle className={styles.navlinks} aria-controls="basic-navbar-nav" />
     <Navbar.Collapse className={styles.navlinks} id="basic-navbar-nav">
@@ -191,14 +191,15 @@ async function changePicLeft() {
         <meta name="description" content="Ashley Lewis - Embroidery Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar bg="light" expand="lg" fixed="top">
-      <Container>
+      <Navbar className={styles.navbar} expand="lg" fixed="top">
+      <Container className={styles.navbar}>
       <Navbar.Brand href="/">Ash Embroidery</Navbar.Brand>
       <Navbar.Toggle className={styles.navlinks} aria-controls="basic-navbar-nav" />
       <Navbar.Collapse className={styles.navlinks} id="basic-navbar-nav">
         <Nav className={styles.navlinks}>
+          <Nav.Link href="https://www.instagram.com/ash_lewie/">Instagram</Nav.Link>
           <Nav.Link href="/about">About</Nav.Link>
-          <Nav.Link href="/contact">Contact</Nav.Link>
+          <Nav.Link href="/contact">Contact</Nav.Link>          
         </Nav>
       </Navbar.Collapse>
       </Container>
@@ -246,6 +247,7 @@ async function changePicLeft() {
       </main>
       <div>
         <Container>
+          <Row>            
       <h3>
           Bio
         </h3>
@@ -263,6 +265,7 @@ The timeline can vary a fair bit. I’m in graduate school and sometimes my scho
 Currently I have a backlog of commissions but can add to the waitlist. I’m estimating being able to get to a new commission about one or two months from being contacted.
 If you have a design in mind you are welcome to send it to me. If you want me to come up with a design, we can work together to figure out something that works for you! 
         </p>
+        </Row>
         </Container>
         </div>
         

@@ -12,12 +12,13 @@ export default function About() {
         <meta name="description" content="Ashley Lewis - Embroidery Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar bg="light" expand="lg" fixed="top">
+      <Navbar expand="lg" fixed="top">
       <Container>
       <Navbar.Brand href="/">Ash Embroidery</Navbar.Brand>
       <Navbar.Toggle className={styles.navlinks} aria-controls="basic-navbar-nav" />
       <Navbar.Collapse className={styles.navlinks} id="basic-navbar-nav">
         <Nav className={styles.navlinks}>
+          <Nav.Link href="https://www.instagram.com/ash_lewie/">Instagram</Nav.Link>
           <Nav.Link href="/about">About</Nav.Link>
           <Nav.Link href="/contact">Contact</Nav.Link>
         </Nav>
