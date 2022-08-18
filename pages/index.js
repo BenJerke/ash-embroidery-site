@@ -148,7 +148,8 @@ async function changePicLeft() {
 }
 
 
-  return (useMediaQuery() ? (<div>
+  return (useMediaQuery() ? (
+  <div>
     <Head>
       <title>Ash Embroidery</title>
       <meta name="description" content="Ashley Lewis - Embroidery Portfolio" />
@@ -249,7 +250,7 @@ async function changePicLeft() {
       <div>
         <Container>
           <Row>            
-      <h3>
+        <h3>
           Bio
         </h3>
         <p>

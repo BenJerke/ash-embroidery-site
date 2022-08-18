@@ -1,18 +1,18 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import React, { useState, useEffect, useCallback } from 'react'
-import { Button, Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
+import { Button, Navbar, Container, Nav, NavDropdown, Row, Col } from 'react-bootstrap'
 
 
 export default function About() {
   return (
-    <div>
+    <div className={styles.containerbig}>
       <Head>
         <title>Ash Embroidery</title>
         <meta name="description" content="Ashley Lewis - Embroidery Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar expand="lg" fixed="top">
+      <Navbar className={styles.navbar} expand="lg" fixed="top">
       <Container>
       <Navbar.Brand href="/">Ash Embroidery</Navbar.Brand>
       <Navbar.Toggle className={styles.navlinks} aria-controls="basic-navbar-nav" />
@@ -24,9 +24,11 @@ export default function About() {
         </Nav>
       </Navbar.Collapse>
       </Container>
-    </Navbar>
-      <div className={styles.container}>
-      <main className={styles.main}> 
+    </Navbar> 
+    <div>
+        <Container fluid>
+        <Row>
+        <main className={styles.main}>           
         <h3>
           Bio
         </h3>
@@ -44,8 +46,10 @@ The timeline can vary a fair bit. I’m in graduate school and sometimes my scho
 Currently I have a backlog of commissions but can add to the waitlist. I’m estimating being able to get to a new commission about one or two months from being contacted.
 If you have a design in mind you are welcome to send it to me. If you want me to come up with a design, we can work together to figure out something that works for you! 
         </p>
-      </main>
-      </div>   
+        </main> 
+        </Row>
+        </Container>
+        </div>        
       </div>
   )
 }
