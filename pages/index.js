@@ -150,11 +150,11 @@ async function changePicLeft() {
 
   return (useMediaQuery() ? (<div>
     <Head>
-      <title>DEMO SITE</title>
-      <meta name="description" content="not done don't look aaaaa" />
+      <title>Ash Embroidery</title>
+      <meta name="description" content="Ashley Lewis - Embroidery Portfolio" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <Navbar expand="lg" fixed="top">
+    <Navbar className={styles.navbar} expand="lg" fixed="top">
     <Container className={styles.navbar}>
     <Navbar.Brand href="/">Ash Embroidery</Navbar.Brand>
     <Navbar.Toggle className={styles.navlinks} aria-controls="basic-navbar-nav" />
@@ -162,6 +162,7 @@ async function changePicLeft() {
       <Nav className={styles.navlinks}>
         <Nav.Link href="/about">About</Nav.Link>
         <Nav.Link href="/contact">Contact</Nav.Link>
+        <Nav.Link href="https://www.instagram.com/ash_lewie/">Instagram</Nav.Link>
       </Nav>
     </Navbar.Collapse>
     </Container>
