@@ -55,7 +55,7 @@ const useMediaQuery = () => {
       </Navbar.Collapse>
       </Container>
     </Navbar>
-      <div className={styles.container}>
+      <div className={styles.containerbig}>
       <main className={styles.main}> 
       <Form>
       <Form.Group className="mb-3" controlId="emailaddress">
