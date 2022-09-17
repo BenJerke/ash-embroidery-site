@@ -42,7 +42,7 @@ const useMediaQuery = () => {
         <meta name="description" content="Ashley Lewis - Embroidery Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar expand="lg" fixed="top">
+      <Navbar expand="lg" fixed="top" className={styles.bavnar}>
       <Container>
       <Navbar.Brand href="/">Ash Embroidery</Navbar.Brand>
       <Navbar.Toggle className={styles.navlinks} aria-controls="basic-navbar-nav" />

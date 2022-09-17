@@ -19,6 +19,7 @@
   background-color: #6b6c67;
 }
 
+
 .main {
   padding: 4rem 0 0;
   flex: 1;
@@ -143,15 +144,33 @@
   
 }
 
+#imgRight{
+  border: 2px; 
+  border-color: #eaeaea;
+}
+
+#imgLeft {
+  border: 2px; 
+  border-color: #eaeaea;
+}
+
+.pgph {
+  width: 20%;
+}
+
 .image {
   animation-name: none;
   margin: 20px;
+  border: 5px solid;
+  border-color: #c1bcb2;  
 }
 
 .imageslidefromright {
   animation-name: slideleft;
   animation-duration: 1.1s;
   animation-iteration-count: 1;
+  border: 5px solid;
+  background-color: #c1bcb2;  
 
 }
 
@@ -159,6 +178,12 @@
   animation-name: slideright;
   animation-duration: 1.1s;
   animation-iteration-count: 1;
+  border: 5px solid;
+  border-color: #c1bcb2;  
+}
+.imgrow{
+  padding-top: 7px;
+  background-color: #c1bcb2;  
 }
 
 .buttonholder {
@@ -168,6 +193,7 @@
 
 .navbar {
   background-color: #586b4f;
+  padding-bottom: .7rem;
 }
 
 .navlinks {
@@ -179,7 +205,10 @@
 .imageholder {
   flex-direction: column;
   justify-content: center;
+
 }
+
+
 @keyframes slideleft {
   from {
     margin-right: 100%;    
