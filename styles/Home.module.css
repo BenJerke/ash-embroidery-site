@@ -74,7 +74,10 @@
 }
 
 .listItem {
-  margin: 0 0 1.25rem;
+  margin: 1.25rem 1.25rem 1.25rem;
+  padding-top: 7px;
+  padding: 1.25rem 1.25rem 1.25rem;
+  background-color: #c1bcb2;  
 }
 .grid {
   display: flex;
@@ -181,7 +184,7 @@
   border: 5px solid;
   border-color: #c1bcb2;  
 }
-.imgrow{
+.imgrow {
   padding-top: 7px;
   background-color: #c1bcb2;  
 }
