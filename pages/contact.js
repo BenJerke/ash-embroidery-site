@@ -3,6 +3,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import React, { useState, useEffect, useCallback } from 'react'
 import { Button, Navbar, Container, Nav, NavDropdown, Form } from 'react-bootstrap'
+import Ashnav from '../components/ashnav'
 
 
 export default function Contact() {
@@ -37,24 +38,7 @@ const useMediaQuery = () => {
 }
   return (
     <div>
-      <Head>
-        <title>Ash Embroidery</title>
-        <meta name="description" content="Ashley Lewis - Embroidery Portfolio" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Navbar expand="lg" fixed="top" className={styles.bavnar}>
-      <Container>
-      <Navbar.Brand href="/">Ash Embroidery</Navbar.Brand>
-      <Navbar.Toggle className={styles.navlinks} aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse className={styles.navlinks} id="basic-navbar-nav">
-        <Nav className={styles.navlinks}>
-          <Nav.Link href="https://www.instagram.com/ash_lewie/">Instagram</Nav.Link>
-          <Nav.Link href="/about">About</Nav.Link>
-          <Nav.Link href="/contact">Contact</Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
-      </Container>
-    </Navbar>
+      <Ashnav></Ashnav>
       <div className={styles.containerbig}>
       <main className={styles.main}> 
       <Form>
