@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import React, { useState, useEffect, useCallback } from 'react'
 import { Button, Navbar, Container, Nav, NavDropdown, Row, Col } from 'react-bootstrap'
+import Ashnav from '../components/ashnav'
 
 
 export default function About() {
@@ -12,19 +13,7 @@ export default function About() {
         <meta name="description" content="Ashley Lewis - Embroidery Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar className={styles.navbar} expand="lg" fixed="top">
-      <Container>
-      <Navbar.Brand href="/">Ash Embroidery</Navbar.Brand>
-      <Navbar.Toggle className={styles.navlinks} aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse className={styles.navlinks} id="basic-navbar-nav">
-        <Nav className={styles.navlinks}>
-          <Nav.Link href="https://www.instagram.com/ash_embroiders/">Instagram</Nav.Link>
-          <Nav.Link href="/about">About</Nav.Link>
-          <Nav.Link href="mailto:embroideryash@gmail.com">Contact</Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
-      </Container>
-    </Navbar> 
+      <Ashnav></Ashnav>
     <div>
         <Container fluid>
         <Row>
