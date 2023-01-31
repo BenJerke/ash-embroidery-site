@@ -7,7 +7,7 @@ import { Button, Navbar, Container, Nav, NavDropdown, Row, Col } from 'react-boo
 import Ashnav from '../components/ashnav'
 
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const carouselPicData = await getCarouselPicData();
   let picSrc = [];
   carouselPicData.forEach(obj => {
