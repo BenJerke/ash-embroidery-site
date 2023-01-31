@@ -6,7 +6,7 @@ import { getCarouselPicData } from '../utils/utils'
 import React, { useState, useEffect, useCallback } from 'react'
 import { Button, Navbar, Container, Nav, NavDropdown, Row, Col } from 'react-bootstrap'
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const carouselPicData = await getCarouselPicData();
   let picSrc1 = [];
   let picSrc2 = [];
